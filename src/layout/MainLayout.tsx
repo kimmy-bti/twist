@@ -1,15 +1,13 @@
+import { Outlet } from "react-router-dom";
 import styled from "@emotion/styled";
 import bg from "@/assets/images/background.png";
-import { ReactNode } from "react";
 
-interface IMainLayout {
-  children: ReactNode;
-}
-
-const MainLayout = ({ children }: IMainLayout) => {
+const MainLayout = () => {
   return (
     <Layout>
-      <Content>{children}</Content>
+      <Content>
+        <Outlet />
+      </Content>
     </Layout>
   );
 };
@@ -26,4 +24,8 @@ const Content = styled.div`
   max-width: 1400px;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
